@@ -17,4 +17,9 @@ export class ServicesService {
   postCompany(company: Company){
     return this.http.post<Company>(this.URL, company)
   }
+
+  putCompany(id:number, company:Company){
+    const companyURL = `${this.URL}/${id}`
+    return this.http.put<Company>(companyURL ,company)
+  }
 }

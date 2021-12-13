@@ -8,8 +8,20 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AddCompanyComponent } from './add-company/add-company.component';
 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field'
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
+import { AlterCompanyComponent } from './alter-company/alter-company.component';
 
 
 @NgModule({
@@ -17,7 +29,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    AddCompanyComponent
+    AddCompanyComponent,
+    ErrorDialogComponent,
+    AlterCompanyComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +39,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatDividerModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

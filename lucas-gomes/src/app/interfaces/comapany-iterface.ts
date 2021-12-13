@@ -1,5 +1,5 @@
 export interface Company {
-    id?: number;
+    id: number;
     nomeFantasia: string;
     razaoSocial: string;
     qtdeFuncionarios: number;

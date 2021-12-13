@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>Hi {{company.nomeFantasia}}</h1>
+<div mat-dialog-content>
+
+      <form #companyAltered="ngForm"  novalidate>
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{company.nomeFantasia}}</mat-label>
+              <input name='nomeFantasia' ngModel placeholder="nome" matInput placeholder="Novo Nome" required>
+            </mat-form-field>
+          </p>
+    
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{company.razaoSocial}}</mat-label>
+              <input name="razaoSocial" matInput ngModel placeholder="Razão Social" required>
+            </mat-form-field>
+          </p>
+    
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>{{company.qtdeFuncionarios}}</mat-label>
+              <input name='qtdeFuncionarios' matInput ngModel type="number" placeholder="Funcionarios" required>
+            </mat-form-field>
+          </p>
+    
+        </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="companyAltered.value" cdkFocusInitial [disabled]="companyAltered.form.invalid">Ok</button>
+</div>
