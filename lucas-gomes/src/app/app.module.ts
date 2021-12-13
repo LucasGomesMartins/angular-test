@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,9 +20,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
 
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import { AlterCompanyComponent } from './alter-company/alter-company.component';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
@@ -52,7 +54,8 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,25 @@
-<form #company="ngForm" (ngSubmit)="onSubmit(company.value)" novalidate>
+<form #company="ngForm" (ngSubmit)="postCompany(company.value)" novalidate>
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input name='nomeFantasia' ngModel placeholder="nome" matInput placeholder="Ex. Google" required>
+        </mat-form-field>
+      </p>
 
-    <input name='nomeFantasia' #nomeFantasia="ngModel" ngModel placeholder="nome">
-    <br>
-    <input name="razaoSocial" ngModel placeholder="razao">
-    <br>
-    <input name='qtdeFuncionarios' ngModel type="number" placeholder="funcionarios">
-    <br>
-    <button >enviar</button>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Razão Social</mat-label>
+          <input name="razaoSocial" matInput ngModel placeholder="Ex. Google inc." required>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Funcionarios</mat-label>
+          <input name='qtdeFuncionarios' matInput ngModel type="number" placeholder="Ex. 322" required>
+        </mat-form-field>
+      </p>
+    <button mat-button color="accent" [disabled]="company.form.invalid">Enviar</button>
 </form>
 
 
