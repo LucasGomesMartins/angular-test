@@ -11,6 +11,10 @@ export class ServicesService {
   constructor(private http: HttpClient) { }
 
   getCompanys(){
-    return this.http.get<any>(this.URL)
+    return this.http.get<Company>(this.URL)
+  }
+
+  postCompany(company: Company){
+    return this.http.post<Company>(this.URL, company)
   }
 }

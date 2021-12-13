@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Company } from '../interfaces/comapany-iterface';
+import { ServicesService } from '../services.service';
 
 @Component({
   selector: 'app-add-company',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCompanyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ServicesService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(company:Company){
+    company.active = true;
+    
+    this.service.postCompany(company).subscribe(
+      () => console.log(company),
+      (err) => console.log(err)
+    )
   }
 
 }

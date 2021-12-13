@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
 
   getCompany(){
     this.service.getCompanys().subscribe(
-      //@ts-ignore
       (result) => {
         this.companys = result
       },

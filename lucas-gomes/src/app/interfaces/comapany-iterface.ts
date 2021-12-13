@@ -1,8 +1,7 @@
 export interface Company {
-    id: number;
-    avatarUrl: string;
+    id?: number;
     nomeFantasia: string;
     razaoSocial: string;
     qtdeFuncionarios: number;
-    active: true;
+    active?: boolean;
 }
