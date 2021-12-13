@@ -5,6 +5,19 @@ img {
     margin-right: 15px;
 }
 
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+mat-list {
+    width: 1300px;
+}
+
+ul {
+    list-style: none;
+}
+
 .content {
     display: flex;
     align-items: center;

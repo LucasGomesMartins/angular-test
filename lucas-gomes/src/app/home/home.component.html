@@ -1,33 +1,47 @@
-<p>home works!</p>
-<button (click)="teste()">testar</button>
-<br />
-
-<div *ngIf="loading ; then onLoding else loadingFinshed"></div>
+<div class="main" *ngIf="loading; then onLoding; else loadingFinshed"></div>
 
 <ng-template #onLoding>
   <div class="loading">
-    <mat-spinner></mat-spinner> 
-  </div>  
+    <mat-spinner></mat-spinner>
+  </div>
 </ng-template>
 
-
 <ng-template #loadingFinshed>
-<mat-list>
-  <mat-list-item *ngFor="let company of companys">
-    <img [src]="company.avatarUrl" [alt]="company.nomeFantasia" />
-    <div class="content">
-      <h2>{{ company.nomeFantasia }}</h2>
-      <span>
-          Funcionarios: {{ company.qtdeFuncionarios }}
-        <i>{{ company.razaoSocial }}</i>
-      </span>
-      
-    </div>
-    <div class="buttons">
-      <button mat-button color="warn" [matTooltip]="'Deletar '+ company.nomeFantasia"><mat-icon>delete</mat-icon></button>
-      <button mat-button color="accent" [matTooltip]="'Editar '+ company.nomeFantasia" (click)="updateCopany(company)"><mat-icon>edit</mat-icon></button>
-    </div>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-</mat-list>
+  <ul>
+    <mat-list>
+      <li *ngFor="let company of companys">
+        <ng-template [ngIf]="company.active">
+          <mat-list-item>
+            <img [src]="company.avatarUrl" [alt]="company.nomeFantasia" />
+            <div class="content">
+              <h2>{{ company.nomeFantasia }}</h2>
+              <span>
+                Funcionarios: {{ company.qtdeFuncionarios }}
+                <i>{{ company.razaoSocial }}</i>
+              </span>
+            </div>
+            <div class="buttons">
+              <button
+                mat-button
+                color="warn"
+                [matTooltip]="'Deletar ' + company.nomeFantasia"
+                (click)="deleteCopany(company)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button
+                mat-button
+                color="accent"
+                [matTooltip]="'Editar ' + company.nomeFantasia"
+                (click)="updateCopany(company)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </div>
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </ng-template>
+      </li>
+    </mat-list>
+  </ul>
 </ng-template>

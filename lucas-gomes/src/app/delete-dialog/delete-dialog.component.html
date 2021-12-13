@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Tem certeza que deseja deletar {{company.nomeFantasia}}?</h1>
+<div mat-dialog-content>
+    <p><b>Nome: </b>           {{company.nomeFantasia}}</p>
+    <p><b>Razao Social: </b>     {{company.razaoSocial}}</p>
+    <p><b>Funcionarios: </b>{{company.qtdeFuncionarios}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button>
+</div>

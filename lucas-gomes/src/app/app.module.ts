@@ -17,11 +17,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 import { AlterCompanyComponent } from './alter-company/alter-company.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { AlterCompanyComponent } from './alter-company/alter-company.component';
     HomeComponent,
     AddCompanyComponent,
     ErrorDialogComponent,
-    AlterCompanyComponent
+    AlterCompanyComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { AlterCompanyComponent } from './alter-company/alter-company.component';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

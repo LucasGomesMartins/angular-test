@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "add-company",
+    path: "add-empresa",
     component: AddCompanyComponent
   }
 ];

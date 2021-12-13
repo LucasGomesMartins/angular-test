@@ -1,5 +1,4 @@
-<a routerLink="home">Empresas</a>
-<br>
-<a routerLink="add-company">Adicionar Empresa</a>
-
-
+<mat-tab-group backgroundColor="accent" color="accent" (selectedTabChange)="tabClick($event)">
+    <mat-tab label="Empresas"></mat-tab>
+    <mat-tab label="Adicionar Empresa"></mat-tab>
+</mat-tab-group>
